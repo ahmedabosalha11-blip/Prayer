@@ -36,7 +36,7 @@ h3 {
   background-color: #332a224e;
   border: 1px solid #d7d7d74e;
   border-radius: 10px;
-  padding: 25px 15px;
+  padding: 10px 15px;
   margin-right: 10%;
 }
 
@@ -101,7 +101,7 @@ h3 {
   }
 
   .prayer_section {
-    width: 90% !important;
+    width: 100% !important;
     margin: auto;
   }
 
@@ -117,7 +117,7 @@ h3 {
   .date{
     padding-top: 20px;
     border-top: 1px solid #d7d7d74e;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
