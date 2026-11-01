@@ -1,0 +1,110 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+  color: white;
+}
+html{
+  direction: rtl;
+}
+h3{
+  font-size: 25px !important;
+}
+h2{
+  font-size: 30px !important;
+  padding: 20px 15px;
+  border-bottom: 1px solid #d7d7d74e;
+  margin-bottom: 15px !important;
+}
+body{
+  min-height: 100vh;
+  width: 100% !important;
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 15%;
+}
+
+.main_div{
+  width: 600px !important;
+  background-color: #332a224e;
+  border: 1px solid #d7d7d74e;
+  border-radius: 10px;
+  padding: 25px 15px;
+}
+.main_div .city,
+.main_div .date{
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.main_div .date{
+  width: 200px !important;
+}
+.main_div .city .dropdown button{
+  width: 80%;
+  padding: 8px 10px;
+  outline: none;
+  background-color: rgba(210, 105, 30, 0.653);
+  color: white;
+  border: 1px solid #d7d7d74e;
+}
+.main_div .city .dropdown .dropdown-menu{
+  width: 80%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: rgba(210, 105, 30, 0.653);
+  border: 1px solid #d7d7d74e;
+}
+.main_div .city .dropdown .dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main_div .city .dropdown .dropdown-menu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.main_div .city .dropdown .dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.main_div .city .dropdown .dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.main_div .city .dropdown .dropdown-menu li{
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+}
+.main_div .city .dropdown .dropdown-menu li:hover{
+  background-color: #cccccc42;
+}
+.main_div .times{
+  background-color: rgba(210, 105, 30, 0.467);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #d7d7d74e;
+}
+
+@media (max-width:768px) {
+  body{
+    padding-right: 0;
+    justify-content: center;
+  }
+  .main_div{
+    width: 400px !important;
+  }
+  .main_div .date{
+    width: fit-content !important;
+  }
+}
+@media (max-width:575px){
+  .main_div{
+    width: 350px !important;
+  }
+}
