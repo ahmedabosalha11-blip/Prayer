@@ -67,43 +67,44 @@ function App() {
   };
 
   return (
-    <>
+    <div className="main">
+      <div className="container">
+        <div className="prayer_section my-3">
+          <div className="top_section">
+            <div className='d-flex justify-content-center'>
+              <h2>مواقيت الصلاه</h2>
+            </div>
+            <div className="date_city my-3 d-flex align-items-center justify-content-between">
+              <div className="city">
+                <h3>المدينه</h3>
+                <div className="dropdown ">
+                  <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p className='mb-0 '>اختر مدينه</p>
+                    <MdArrowDropDown className='fs-3' />
+                  </button>
+                  <ul className="dropdown-menu ">
 
-      <div className="main_div">
-        <div className='d-flex justify-content-center'>
-          <h2>مواقيت الصلاه</h2>
-        </div>
-        <div className="top_section d-flex align-items-center justify-content-between">
-          <div className='city flex-grow-1 '>
-            <h3>المدينه</h3>
-            <div className="dropdown ">
-              <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <p className='mb-0 '>اختر مدينه</p>
-                <MdArrowDropDown className='fs-3' /> 
-              </button>
-              <ul className="dropdown-menu ">
-
-                {cities.map(city => {
-                  return <li onClick={() => setCity(city.value)} key={city.value} className="dropdown-item"> {city.name} </li>
-                })}
-              </ul>
+                    {cities.map(city => {
+                      return <li onClick={() => setCity(city.value)} key={city.value} className="dropdown-item"> {city.name} </li>
+                    })}
+                  </ul>
+                </div>
+              </div>
+              <div className="date">
+                <h3>التاريخ</h3>
+                <p className='mb-0 fs-3'>{date}</p>
+              </div>
             </div>
           </div>
-          <div className='date '>
-            <h3>التاريخ</h3>
-            <p className='mb-0 fw-bold fs-4 '>{date}</p>
-          </div>
-        </div>
-        <hr className="my-4 text-light" />
-
-        <Prayer name={'الفجر :'} time={formatTimeCairo(times.Fajr)} />
+          <hr className='my-3'/>
+          <Prayer name={'الفجر :'} time={formatTimeCairo(times.Fajr)} />
         <Prayer name={'الظهر :'} time={formatTimeCairo(times.Dhuhr)} />
         <Prayer name={'العصر :'} time={formatTimeCairo(times.Asr)} />
         <Prayer name={'المغرب :'} time={formatTimeCairo(times.Maghrib)} />
         <Prayer name={'العشاء :'} time={formatTimeCairo(times.Isha)} />
+        </div>
       </div>
-
-    </>
+    </div>
   )
 }
 
