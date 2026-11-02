@@ -10,6 +10,7 @@ function App() {
   const [date, setDate] = useState('');
   const [times, setTimes] = useState({});
   const [city, setCity] = useState('Cairo');
+  const [cityAr, setCityAr] = useState('القاهره');
   const cities = [
     { name: 'القاهرة', value: 'Cairo' },
     { name: 'الجيزة', value: 'Giza' },
@@ -76,7 +77,10 @@ function App() {
             </div>
             <div className="date_city my-3 d-flex align-items-center justify-content-between">
               <div className="city">
-                <h3>المدينه</h3>
+                <div className='d-flex align-items-center gap-3'>
+                  <h3>المدينه</h3>
+                  <span>( {cityAr} )</span>
+                </div>
                 <div className="dropdown ">
                   <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <p className='mb-0 '>اختر مدينه</p>
@@ -85,7 +89,7 @@ function App() {
                   <ul className="dropdown-menu ">
 
                     {cities.map(city => {
-                      return <li onClick={() => setCity(city.value)} key={city.value} className="dropdown-item"> {city.name} </li>
+                      return <li onClick={() => {setCity(city.value); setCityAr(city.name)}} key={city.value} className="dropdown-item"> {city.name} </li>
                     })}
                   </ul>
                 </div>
