@@ -77,13 +77,11 @@ function App() {
             </div>
             <div className="date_city my-3 d-flex align-items-center justify-content-between">
               <div className="city">
-                <div className='d-flex align-items-center gap-3'>
                   <h3>المدينه</h3>
-                  <span>( {cityAr} )</span>
-                </div>
                 <div className="dropdown ">
                   <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <p className='mb-0 '>اختر مدينه</p>
+                    <span>( {cityAr} )</span>
                     <MdArrowDropDown className='fs-3' />
                   </button>
                   <ul className="dropdown-menu ">
