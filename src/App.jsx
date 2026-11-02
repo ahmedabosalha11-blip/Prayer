@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="main">
       <div className="container">
-        <div className="prayer_section my-5">
+        <div className="prayer_section my-2">
           <div className="top_section">
             <div className='d-flex justify-content-center'>
               <h2>مواقيت الصلاه</h2>
