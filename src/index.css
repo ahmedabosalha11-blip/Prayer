@@ -95,6 +95,22 @@ h3 {
   border-radius: 8px;
   border: 1px solid #d7d7d74e;
 }
+.date_city {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .city{
+    width: 100%;
+  }
+  .date {
+    width: 100%;
+  }
+  .date{
+    padding-top: 20px;
+    border-top: 1px solid #d7d7d74e;
+    margin-top: 10px;
+  }
 @media (max-width:767px) {
   .main {
     justify-content: center !important;
@@ -106,19 +122,6 @@ h3 {
     margin: auto;
   }
 
-  .date_city {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .city,
-  .date {
-    width: 100%;
-  }
-  .date{
-    padding-top: 20px;
-    border-top: 1px solid #d7d7d74e;
-    margin-top: 10px;
-  }
+  
 }
 
