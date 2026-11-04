@@ -12,7 +12,7 @@ function App() {
   const [city, setCity] = useState('Cairo');
   const [country, setCountry] = useState('Egypt');
   const [cityAr, setCityAr] = useState('القاهرة');
-  const [countryAr, setCountryAr] = useState('مصر'); // 👈 أضفنا هذا الـ state لاسم الدولة بالعربي
+  const [countryAr, setCountryAr] = useState('مصر');
 
   const countries = [
     {
@@ -145,7 +145,6 @@ function App() {
         { name: 'طنجة', value: 'Tangier' }
       ]
     },
-    // --- الـ 10 دول الجديدة ---
     {
       couName: 'الولايات المتحدة', value: 'United States', cities: [
         { name: 'نيويورك', value: 'New York' },
@@ -242,6 +241,7 @@ function App() {
     }
     GetTimes();
   }, [city, country])
+console.log(times);
 
   const formatTimeCairo = (time24) => {
     if (!time24) return "";
@@ -263,23 +263,8 @@ function App() {
               <h2>مواقيت الصلاه</h2>
             </div>
             <div className="date_city my-3 d-flex align-items-center justify-content-between">
-              <div className="city d-flex align-items-center">
-                <div className='flex-grow-1'>
-                  <h3>المدينة</h3>
-                  <div className="dropdown">
-                    <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <p className='mb-0'>اختر مدينة</p>
-                      <span>( {cityAr} )</span>
-                      <MdArrowDropDown className='fs-3' />
-                    </button>
-                    <ul className="dropdown-menu">
-                      {chosenCountry.map(c => (
-                        <li onClick={() => { setCity(c.value); setCityAr(c.name) }} key={c.value} className="dropdown-item"> {c.name} </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className='flex-grow-1'>
+              <div className="city d-flex flex-column align-items-center">
+                <div className='w-100'>
                   <h3>الدولة</h3>
                   <div className="dropdown">
                     <button
@@ -299,7 +284,6 @@ function App() {
                             setCountry(coun.value);
                             setCountryAr(coun.couName);
                             setChosenCountry(coun.cities);
-                            // ضبط أول مدينة افتراضياً عند تغيير الدولة لتجنب تضارب البيانات
                             setCity(coun.cities[0].value);
                             setCityAr(coun.cities[0].name);
                           }}
@@ -307,6 +291,21 @@ function App() {
                           className="dropdown-item">
                           {coun.couName}
                         </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className='w-100 mt-3'>
+                  <h3>المدينة</h3>
+                  <div className="dropdown">
+                    <button className="btn btn-secondary d-flex align-items-center justify-content-between" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <p className='mb-0'>اختر مدينة</p>
+                      <span>( {cityAr} )</span>
+                      <MdArrowDropDown className='fs-3' />
+                    </button>
+                    <ul className="dropdown-menu">
+                      {chosenCountry.map(c => (
+                        <li onClick={() => { setCity(c.value); setCityAr(c.name) }} key={c.value} className="dropdown-item"> {c.name} </li>
                       ))}
                     </ul>
                   </div>
